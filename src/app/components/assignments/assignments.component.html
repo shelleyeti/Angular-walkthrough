@@ -1,0 +1,5 @@
+<input type="text" class="form-control" placeholder="add a username" [(ngModel)]="username">
+
+<button class="btn btn-primary mt-2" [disabled]="username === ''" (click)="onCreateUsername()">Add Username</button>
+
+<p>{{ usernameCreationStatus }}</p>
