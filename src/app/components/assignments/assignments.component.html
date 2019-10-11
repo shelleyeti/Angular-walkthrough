@@ -3,3 +3,13 @@
 <button class="btn btn-primary mt-2" [disabled]="username === ''" (click)="onCreateUsername()">Add Username</button>
 
 <p>{{ usernameCreationStatus }}</p>
+
+<hr>
+
+<button class="btn btn-primary mt-2" (click)="onToggleDisplay()">Display Details</button>
+
+<p *ngIf="showSecret">Secret secret</p>
+
+<div *ngFor="let logItem of logClick">
+    {{ logItem }}
+</div>

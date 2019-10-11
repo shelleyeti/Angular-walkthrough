@@ -6,12 +6,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./server.component.css']
 })
 export class ServerComponent implements OnInit {
-  serverId = 10;
   serverStatus = 'offline';
   addNewServer = false;
   serverCreationStatus = 'No server was created';
   serverName = '';
   serverCreated = false;
+  servers = [];
 
   constructor() {
     this.serverStatus = Math.random() > 0.5 ? 'online' : 'offline';
@@ -25,7 +25,9 @@ export class ServerComponent implements OnInit {
   }
   onCreateServer() {
     this.serverCreated = true;
+    this.servers.push(this.serverName)
     this.serverCreationStatus = `Server was created! Called ${this.serverName}`;
+    this.serverName = '';
   }
 
   onUpdateServerName(event: any) {

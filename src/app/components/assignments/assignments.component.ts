@@ -8,6 +8,8 @@ import { Component, OnInit } from '@angular/core';
 export class AssignmentsComponent implements OnInit {
   username = '';
   usernameCreationStatus = 'No user was created';
+  showSecret = false;
+  logClick = [];
 
   constructor() { }
 
@@ -17,5 +19,10 @@ export class AssignmentsComponent implements OnInit {
   onCreateUsername() {
     this.usernameCreationStatus = `User was created! Called ${this.username}`;
     this.username = '';
+  }
+
+  onToggleDisplay() {
+    this.showSecret = !this.showSecret;
+    this.logClick.push(this.logClick.length + 1);
   }
 }

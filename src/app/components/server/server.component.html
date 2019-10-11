@@ -1,4 +1,6 @@
-<p [ngStyle]="{backgroundColor: getColor()}">Sever with id {{ serverId }} is {{ getServerStatus() }}</p>
+<p [ngStyle]="{backgroundColor: getColor()}" [ngClass]="{online: serverStatus === 'online'}">Sever with id
+    {{ serverId }} is
+    {{ getServerStatus() }}</p>
 
 <input type="text" class="form-control" placeholder="add a server" [(ngModel)]="serverName">
 
@@ -10,3 +12,6 @@
 <ng-template #noServer>
     <p>No server was created</p>
 </ng-template>
+
+<h4>List of Servers</h4>
+<app-server *ngFor="let server of servers"></app-server>
